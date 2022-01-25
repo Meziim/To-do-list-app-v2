@@ -1,5 +1,6 @@
 import './App.css';
 import { useReducer, useState, useRef } from 'react';
+import './style.scss';
 
 const ACTIONS = {
   ADD_TODO: 'add-todo',

@@ -1,0 +1,131 @@
+ body {
+   font-family: 'Roboto', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+ }
+
+ $lightblue: #1488cc;
+ $lighterblue: #0099ff;
+ $darkblue: #2b32b2;
+ $gray: rgb(211, 211, 211);
+ $darkgray: rgb(146, 146, 146);
+
+
+ .App {
+  background: linear-gradient(to bottom, $lightblue, $darkblue);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .main {
+    background-color: white;
+    height: 600px;
+    width: 450px;
+    border-radius: 25px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  button {
+    background-color: $lightblue;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  button:hover {
+    transform: scale(105%);
+    background-color: $lighterblue !important;
+    color: black;
+  }
+  .error {
+    width: 100%;
+    height: 60px;
+    background: #ED4337;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 20px;
+  }
+  form {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center;
+    padding-left: 10px;
+    background-color: $gray;
+    input {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: transparent;
+      color: black;
+      outline: none;
+      font-size: 100%;
+    }
+    button {
+      width: 100px;
+      height: 100%;
+    }
+  }
+  .list {
+    width: 100%;
+    flex: 1;
+    margin-top: 10px;
+    background-color: $gray;
+    border-radius: 10px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: gray;
+      border-radius: 10px;
+    }
+    .item {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 5px;
+      background: $darkblue;
+      padding: 5px;
+      padding-left: 15px;
+      border-radius: 10px;
+      transition: 0.3s;
+      p {
+        color: white !important;
+        font-weight: 300;
+        font-size: 20px;
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        height: 100%;
+        &::first-letter {
+          text-transform: capitalize;
+        }
+      }
+      .buttons {
+        width: 168px;
+        button {
+          width: 80px;
+          height: 40px;
+          margin: 2px;
+        }
+      }
+    }
+    .item.complete {
+      background: $darkgray !important;
+      p {
+        text-decoration: line-through;
+        color: black !important;
+      }
+    }
+  }
+ }
